@@ -12,11 +12,14 @@ var size = [
 ]
 
 var toppings = [
-  [mushrooms,2],
+  [mushrooms, 2],
   [olives, 2],
   [pepperoni, 3],
 ]
 
+Pizza.prototype.addSize = function(size) {
+  this.sizes.push(size[0]);
+}
 
 Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping[0]);

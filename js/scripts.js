@@ -11,30 +11,31 @@ var toppings = ["mushrooms", "olives", "pepperoni"]
 
 Pizza.prototype.addSize = function(size) {
   this.sizes.push(size);
-}
+};
 
 Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
-}
-// debugger;
-if (this.size === "Large") {
-  sizeCost = 16;
-} else if (this.size === "Medium") {
-  sizeCost = 12;
-} else {
-  sizeCost = 8;
-}
+};
 
 
-if (this.toppings === "pepperoni") {
-  toppingCost = 3;
-} else {
-  toppingCost = 2;
-}
+Pizza.prototype.price = function(size,topping) {
 
-Pizza.prototype.price = function(size, topping) {
-  return sizeCost + toppingCost;
-}
+    if (size === "Large") {
+      getSizeCost = 16;
+    } else if (size === "Medium") {
+      getSizeCost = 12;
+    } else {
+      getSizeCost = 8;
+    }
+
+    if (topping === "pepperoni") {
+      getToppingCost = 3;
+    } else {
+      getToppingCost = 2;
+    }
+
+  return getSizeCost + getToppingCost;
+};
 
 
 //** UI LOGIC
@@ -51,6 +52,7 @@ $(document).ready(function(){
     myPizza.addSize(size);
     myPizza.addTopping(topping);
     var price = myPizza.price(size, topping);
+
     console.log(size);
     console.log(topping);
     console.log(myPizza);
@@ -60,7 +62,7 @@ $(document).ready(function(){
     $(".thankyou").show();
     $(".order").show();
     $("input[name='size']").prop("checked",false);
-    $("input[name='topping']:checked").prop("checked",false);
+    $("input[name='topping']").prop("checked",false);
 
   });
 });

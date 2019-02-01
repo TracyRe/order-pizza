@@ -5,7 +5,7 @@ function Pizza() {
   this.toppings = [];
 }
 
-var size = ["large", "medium", "small"]
+var size = ["Large", "Medium", "Small"]
 var toppings = ["mushrooms", "olives", "pepperoni"]
 
 
@@ -16,18 +16,17 @@ Pizza.prototype.addSize = function(size) {
 Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
 }
-
-if (size === "large") {
+// debugger;
+if (this.size === "Large") {
   sizeCost = 16;
-} else if (size === "medium") {
+} else if (this.size === "Medium") {
   sizeCost = 12;
 } else {
   sizeCost = 8;
 }
 
-var topping;
 
-if (topping === "pepperoni") {
+if (this.toppings === "pepperoni") {
   toppingCost = 3;
 } else {
   toppingCost = 2;
@@ -51,15 +50,17 @@ $(document).ready(function(){
 
     myPizza.addSize(size);
     myPizza.addTopping(topping);
-    myPizza.price(size, topping);
+    var price = myPizza.price(size, topping);
     console.log(size);
     console.log(topping);
     console.log(myPizza);
-    console.log(myPizza.price(size, topping));
+    console.log(price);
 
-    // size + " pizza " + "with " + topping + " and " + price "."
+    $(".order").text(size + " pizza " + "with " + topping + ": $" + price);
     $(".thankyou").show();
     $(".order").show();
+    $("input[name='size']").prop("checked",false);
+    $("input[name='topping']:checked").prop("checked",false);
 
   });
 });

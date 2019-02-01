@@ -19,7 +19,7 @@ Pizza.prototype.addTopping = function(topping) {
 
 
 Pizza.prototype.price = function(size,topping) {
-
+// *** IMO this is an inefficient way to include prices - I couldn't figure out how to access values in a more efficient array
     if (size === "Large") {
       getSizeCost = 16;
     } else if (size === "Medium") {
@@ -63,6 +63,7 @@ $(document).ready(function(){
     $(".order").show();
     $("input[name='size']").prop("checked",false);
     $("input[name='topping']").prop("checked",false);
+    
 
   });
 });

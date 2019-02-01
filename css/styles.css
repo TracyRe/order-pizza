@@ -77,10 +77,16 @@ p {
 
 .thankyou, .order {
   display: none;
+  text-align: center;
+}
+
+.order {
+  margin-top: 20px;
 }
 
 .thankyou {
-  font-size: 120%;
+  font-family: cursive;
+  font-size: 200%;
   font-style: italic;
 }
 

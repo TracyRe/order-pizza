@@ -5,28 +5,22 @@ function Pizza() {
   this.toppings = [];
 }
 
-var size = [
-  ["large", 16],
-  ["medium", 12],
-  ["small", 8]
-]
+var size = ["large", "medium", "small"]
 
-var toppings = [
-  ["mushrooms", 2],
-  ["olives", 2],
-  ["pepperoni", 3],
-]
+
+var toppings = ["mushrooms", "olives", "pepperoni"] 
+
 
 Pizza.prototype.addSize = function(size) {
-  this.sizes.push(size[0]);
+  this.sizes.push(size);
 }
 
 Pizza.prototype.addTopping = function(topping) {
-  this.toppings.push(topping[0]);
+  this.toppings.push(topping);
 }
 
 Pizza.prototype.price = function(size, topping) {
-  return size[1] + topping[1];
+  return size + topping;
 }
 
 
@@ -38,13 +32,17 @@ $(document).ready(function(){
 
   $("#place-order").submit (function(event) {
     event.preventDefault();
-    this.size = $("input[name='size']:checked").val();
-    this.topping = $("input[name='topping']:checked").val();
+    var size = $("input[name='size']:checked").val();
+    var topping = $("input[name='topping']:checked").val();
 
-    myPizza.addSize();
-    myPizza.addTopping();
-    myPizza.price();
+    myPizza.addSize(size);
+    myPizza.addTopping(topping);
+    // myPizza.price(size, topping);
 
+    console.log(myPizza);
+    // console.log(myPizza.price(size, topping));
+
+    // size + " pizza " + "with " + topping + " and " + price "."
     $(".thankyou").show();
     $(".order").show();
 

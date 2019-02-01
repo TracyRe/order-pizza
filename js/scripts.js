@@ -38,7 +38,15 @@ $(document).ready(function(){
 
   $("#place-order").submit (function(event) {
     event.preventDefault();
+    this.size = $("input[name='size']:checked").val();
+    this.topping = $("input[name='topping']:checked").val();
 
+    myPizza.addSize();
+    myPizza.addTopping();
+    myPizza.price();
+
+    $(".thankyou").show();
+    $(".order").show();
 
   });
 });

@@ -6,9 +6,7 @@ function Pizza() {
 }
 
 var size = ["large", "medium", "small"]
-
-
-var toppings = ["mushrooms", "olives", "pepperoni"] 
+var toppings = ["mushrooms", "olives", "pepperoni"]
 
 
 Pizza.prototype.addSize = function(size) {
@@ -19,8 +17,24 @@ Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
 }
 
+if (size === "large") {
+  sizeCost = 16;
+} else if (size === "medium") {
+  sizeCost = 12;
+} else {
+  sizeCost = 8;
+}
+
+var topping;
+
+if (topping === "pepperoni") {
+  toppingCost = 3;
+} else {
+  toppingCost = 2;
+}
+
 Pizza.prototype.price = function(size, topping) {
-  return size + topping;
+  return sizeCost + toppingCost;
 }
 
 
@@ -37,10 +51,11 @@ $(document).ready(function(){
 
     myPizza.addSize(size);
     myPizza.addTopping(topping);
-    // myPizza.price(size, topping);
-
+    myPizza.price(size, topping);
+    console.log(size);
+    console.log(topping);
     console.log(myPizza);
-    // console.log(myPizza.price(size, topping));
+    console.log(myPizza.price(size, topping));
 
     // size + " pizza " + "with " + topping + " and " + price "."
     $(".thankyou").show();

@@ -1,20 +1,20 @@
 //** BUSINESS LOGIC
 
 function Pizza() {
-  this.size = [];
+  this.sizes = [];
   this.toppings = [];
 }
 
 var size = [
-  [large, 16]
-  [medium, 12]
-  [small, 8]
+  ["large", 16],
+  ["medium", 12],
+  ["small", 8]
 ]
 
 var toppings = [
-  [mushrooms, 2],
-  [olives, 2],
-  [pepperoni, 3],
+  ["mushrooms", 2],
+  ["olives", 2],
+  ["pepperoni", 3],
 ]
 
 Pizza.prototype.addSize = function(size) {
@@ -29,17 +29,13 @@ Pizza.prototype.price = function(size, topping) {
   return size[1] + topping[1];
 }
 
-// cost
-// small : 8
-// medium : 12
-// large : 16
-//
-// pepperoni : 3
-// olives : 2
-// mushrooms : 2
+
 //** UI LOGIC
 
 $(document).ready(function(){
+
+  var myPizza = new Pizza();
+
   $("#place-order").submit (function(event) {
     event.preventDefault();
 

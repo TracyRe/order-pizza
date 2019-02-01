@@ -6,7 +6,7 @@ function Pizza() {
 }
 
 var size = ["Large", "Medium", "Small"]
-var toppings = ["mushrooms", "olives", "pepperoni"]
+var toppings = ["pepperoni", "mushrooms", "olives"]
 
 
 Pizza.prototype.addSize = function(size) {
@@ -14,9 +14,22 @@ Pizza.prototype.addSize = function(size) {
 };
 
 Pizza.prototype.addTopping = function(topping) {
-  this.toppings.push(topping);
+  for ( var i = 0; i < toppings.length; i++) {
+    var toppingChecked = document.querySelectorAll('input[name=topping]:checked');
+    if (toppingChecked = true) {
+      this.toppings.push(toppings[i]);
+    }
+  }
 };
-
+// ** this method of getting the checked toppings and pushing them to the toppings array of the pizza object didn't work
+// function getToppings(topping) {
+//   var toppings = document.getElementsByName(topping);
+//   for ( var i = 0; i < toppings.length; i++) {
+//     if (toppings[i].checked) {
+//       this.toppings.push(toppings[i]);
+//     }
+//   }
+// } return this.toppings.length > 0 ? this.toppings : null;
 
 Pizza.prototype.price = function(size,topping) {
 // *** IMO this is an inefficient way to include prices - I couldn't figure out how to access values in a more efficient array
@@ -63,7 +76,7 @@ $(document).ready(function(){
     $(".order").show();
     $("input[name='size']").prop("checked",false);
     $("input[name='topping']").prop("checked",false);
-    
+
 
   });
 });

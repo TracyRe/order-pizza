@@ -29,7 +29,9 @@ Each pizza size has a base price | Small: $8, Medium: $12, Large: $16 | Small: $
 Each topping has a price | Pepperoni: $3, Mushrooms: $2, Olives: $2 | Pepperoni: $3, Mushrooms: $2, Olives: $2
 Customer can select size of pizza | Small | Small
 System will store the base price of the pizza | Small | $8
-Customer can select up to three toppings for pizza | Pepperoni, olives | Pepperoni, olives
+Customer can select one topping | Pepperoni | Pepperoni
+Customer can select two toppings for pizza | Pepperoni, olives | Pepperoni, olives
+Customer can select three toppings for pizza | Pepperoni, olives, mushrooms | Pepperoni, olives, mushrooms
 System will add price of each topping to base price | Small pizza + Pepperoni | $8 + $3 = $11
 . | Small pizza + Pepperoni + Olives | $11 + $2 = $13
 Customer can order final pizza | "Order pizza" | "Small pizza with pepperoni, olives, $13"

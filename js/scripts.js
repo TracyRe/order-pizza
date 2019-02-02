@@ -5,34 +5,23 @@ function Pizza() {
   this.toppings = [];
 }
 
-var size = ["Large", "Medium", "Small"]
-var toppings = ["pepperoni", "mushrooms", "olives"]
-
-
 Pizza.prototype.addSize = function(size) {
   this.sizes.push(size);
 };
 
 Pizza.prototype.addTopping = function(topping) {
-  for ( var i = 0; i < toppings.length; i++) {
-    var toppingChecked = document.querySelectorAll('input[name=topping]:checked');
-    if (toppingChecked = true) {
-      this.toppings.push(toppings[i]);
+var topping = document.querySelectorAll("[name=topping]");
+  var i;
+  for (i = 0; i < topping.length; i++) {
+    if (topping[i].checked) {
+      this.toppings.push(topping[i].value);
     }
   }
 };
-// ** this method of getting the checked toppings and pushing them to the toppings array of the pizza object didn't work
-// function getToppings(topping) {
-//   var toppings = document.getElementsByName(topping);
-//   for ( var i = 0; i < toppings.length; i++) {
-//     if (toppings[i].checked) {
-//       this.toppings.push(toppings[i]);
-//     }
-//   }
-// } return this.toppings.length > 0 ? this.toppings : null;
+
 
 Pizza.prototype.price = function(size,topping) {
-// *** IMO this is an inefficient way to include prices - I couldn't figure out how to access values in a more efficient array
+// *** IMO this is the stupides possible way to include prices - I couldn't figure out how to access values in a more efficient array
     if (size === "Large") {
       getSizeCost = 16;
     } else if (size === "Medium") {

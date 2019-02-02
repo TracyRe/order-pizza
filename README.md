@@ -54,9 +54,7 @@ System will display price of pizza as toppings are added | Small pizza + Peppero
 
 ## Known Bugs
 
-* For loop to collect toppings and add to Pizza object skips "Pepperoni"
-* Throwing an error on scripts.js line 39  'toppingCost += 2' - "toppingCost" is not defined
-* Only calculates price for one topping with pizza (when it works)
+* None known
 
 ## Support and contact details
 

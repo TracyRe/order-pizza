@@ -18,7 +18,7 @@ var topping = document.querySelectorAll("[name=topping]");
     }
   }
 };
-
+// ** I am not confident that this is actually pushing values of the selected checkboxes into the array 'toppings'. The array 'toppings' seems to be undefined and I cannot access anything in it by index. But it seems to do something because console log shows values of the selected checkboxes in an array for the Pizza object.
 
 Pizza.prototype.price = function(size,topping) {
 // *** IMO this is the stupidest possible way to include prices - I couldn't figure out how to access values in a more efficient array
@@ -31,16 +31,14 @@ Pizza.prototype.price = function(size,topping) {
     } else {
       sizeCost = 8;
     }
-    // debugger;
-    var i;
-    for (i = 0; i < this.toppings.length; i++) {
-      if (this.toppings[i].value === "Pepperoni") {
-        toppingCost += 3;
 
+    this.toppings.forEach(function(topping) {
+      if (topping === "Pepperoni") { // ** I can't believe this worked. I thought it would be a lot more complicated, like accessing the contents of an array
+        toppingCost += 3;
       } else {
         toppingCost += 2;
       }
-    }
+    });
 
   return sizeCost + toppingCost;
 };

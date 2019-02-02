@@ -11,36 +11,35 @@
   </head>
   <body>
     <div class="container-fluid">
+      <h1>Welcome to Mario and Luigi's Pizzaria</h1>
       <div class="content-wrapper">
-        <h1>Welcome to Mario and Luigi's Pizzaria</h1>
         <h2>Build Your Own Pizza</h2>
-<!-- ****** INPUTS AND LABELS AS LIST ITEMS ****** -->
-        <!-- <ul class="flex-outer">
-            <li>
-              <label for="name">Your name</label>
-              <input type="text" name="name" value="" id="name" placeholder="Your name">
-            </li>
-        </ul> -->
-        <form id="place-order" class="form-control" action="index.html" method="post">
-          <h3>Pick a Size</h3>
-          <p><input id="size-large" type="radio" name="size" value="Large"> <label for="size-large"><strong>Large</strong> .... $16</label></p>
-          <p><input id="size-medium"  type="radio" name="size" value="Medium"> <label for="size-medium"><strong>Medium</strong> .... $12</label></p>
-          <p><input id="size-small"  type="radio" name="size" value="Small"> <label for="size-small"><strong>Small</strong> .... $18</label></p>
 
-          <h3>Pick Your Toppings</h3>
-          <p><input id="topping-pepperoni" type="checkbox" name="topping" value="Pepperoni"> <label for="topping-pepperoni"><strong>Pepperoni</strong> .... $3</label></p>
-          <p><input id="topping-mushrooms" type="checkbox" name="topping" value="Mushrooms"> <label for="topping-mushrooms"><strong>Mushrooms</strong> .... $2</label></p>
-          <p><input id="topping-olives" type="checkbox" name="topping" value="Olives"> <label for="topping-olives"><strong>Olives</strong> .... $2</label></p>
+          <form id="place-order" action="index.html" method="post">
+            <div class="selection-wrap">
+              <div class="selection">
+                <h3>Pick a Size</h3>
+                <p><input id="size-large" type="radio" name="size" value="Large"> <label for="size-large"><strong>Large</strong> .... $16</label></p>
+                <p><input id="size-medium"  type="radio" name="size" value="Medium"> <label for="size-medium"><strong>Medium</strong> .... $12</label></p>
+                <p><input id="size-small"  type="radio" name="size" value="Small"> <label for="size-small"><strong>Small</strong> .... $8</label></p>
+              </div>
 
-          <div class="button-row">
-            <button class="btn btn-primary" type="submit" name="button">Place Order</button>
-          </div>
-          <p class="order"></p>
-          <p class="thankyou">Thank you for your order.</p>
-        </form>
+              <div class="selection">
+                <h3>Pick Your Toppings</h3>
+                <p><input id="topping-pepperoni" type="checkbox" name="topping" value="Pepperoni"> <label for="topping-pepperoni"><strong>Pepperoni</strong> .... $3</label></p>
+                <p><input id="topping-mushrooms" type="checkbox" name="topping" value="Mushrooms"> <label for="topping-mushrooms"><strong>Mushrooms</strong> .... $2</label></p>
+                <p><input id="topping-olives" type="checkbox" name="topping" value="Olives"> <label for="topping-olives"><strong>Olives</strong> .... $2</label></p>
+              </div>
+            </div>
 
+            <div class="button-row">
+              <button class="btn btn-primary" type="submit" name="button">Place Order</button>
+            </div>
+            <h3 class="order"></h3>
+            <p class="thankyou">Thank you for your order.</p>
+          </form>
 
-      </div>
+        </div>
     </div>
   </body>
 </html>

@@ -21,22 +21,26 @@ var topping = document.querySelectorAll("[name=topping]");
 
 
 Pizza.prototype.price = function(size,topping) {
-// *** IMO this is the stupides possible way to include prices - I couldn't figure out how to access values in a more efficient array
+// *** IMO this is the stupidest possible way to include prices - I couldn't figure out how to access values in a more efficient array
     if (size === "Large") {
-      getSizeCost = 16;
+      sizeCost = 16;
     } else if (size === "Medium") {
-      getSizeCost = 12;
+      sizeCost = 12;
     } else {
-      getSizeCost = 8;
+      sizeCost = 8;
+    }
+    debugger;
+    var i;
+    for (i = 0; i < this.toppings.length; i++) {
+      if (this.toppings[i].value === "Pepperoni") {
+        toppingCost += 3;
+
+      } else {
+        toppingCost += 2;
+      }
     }
 
-    if (topping === "pepperoni") {
-      getToppingCost = 3;
-    } else {
-      getToppingCost = 2;
-    }
-
-  return getSizeCost + getToppingCost;
+  return sizeCost + toppingCost;
 };
 
 

@@ -47,7 +47,6 @@ System will display price of pizza as toppings are added | Small pizza + Peppero
 
 ## Setup/Installation Requirements
 
-* View at https://tracyre.github.io/
 * Clone from https://github.com/TracyRe/
 * Open in browser of your choice
 * Edit files as desired
@@ -55,7 +54,9 @@ System will display price of pizza as toppings are added | Small pizza + Peppero
 
 ## Known Bugs
 
-None known
+* For loop to collect toppings and add to Pizza object skips "Pepperoni"
+* Throwing an error on scripts.js line 39  'toppingCost += 2' - "toppingCost" is not defined
+* Only calculates price for one topping with pizza (when it works)
 
 ## Support and contact details
 

@@ -23,14 +23,14 @@
         </ul> -->
         <form id="place-order" class="form-control" action="index.html" method="post">
           <h3>Pick a Size</h3>
-          <p><input type="radio" name="size" value="Large"> Large - $16</p>
-          <p><input type="radio" name="size" value="Medium"> Medium - $12</p>
-          <p><input type="radio" name="size" value="Small"> Small - $8</p>
+          <p><input id="size-large" type="radio" name="size" value="Large"> <label for="size-large"><strong>Large</strong> .... $16</label></p>
+          <p><input id="size-medium"  type="radio" name="size" value="Medium"> <label for="size-medium"><strong>Medium</strong> .... $12</label></p>
+          <p><input id="size-small"  type="radio" name="size" value="Small"> <label for="size-small"><strong>Small</strong> .... $18</label></p>
 
           <h3>Pick Your Toppings</h3>
-          <p><input type="checkbox" name="topping" value="Pepperoni"> Pepperoni - $3</p>
-          <p><input type="checkbox" name="topping" value="Mushrooms"> Mushrooms - $2</p>
-          <p><input type="checkbox" name="topping" value="Olives "> Olives - $2</p>
+          <p><input id="topping-pepperoni" type="checkbox" name="topping" value="Pepperoni"> <label for="topping-pepperoni"><strong>Pepperoni</strong> .... $3</label></p>
+          <p><input id="topping-mushrooms" type="checkbox" name="topping" value="Mushrooms"> <label for="topping-mushrooms"><strong>Mushrooms</strong> .... $2</label></p>
+          <p><input id="topping-olives" type="checkbox" name="topping" value="Olives"> <label for="topping-olives"><strong>Olives</strong> .... $2</label></p>
 
           <div class="button-row">
             <button class="btn btn-primary" type="submit" name="button">Place Order</button>

@@ -6,7 +6,7 @@ function Pizza() {
 }
 
 Pizza.prototype.addSize = function(size) {
-  this.size += size;
+  this.size = size;
 };
 // Pizza.prototype.addSize = function(size) {
 //   this.sizes.push(size);
@@ -21,7 +21,7 @@ var topping = document.querySelectorAll("[name=topping]");
     }
   }
 };
-// ** I am not entirely confident that this is actually pushing values of the selected checkboxes into the array 'toppings'. The array 'toppings' seems to be undefined and I cannot seem to access anything in it by index. But something seems to be happening because console log shows values of the selected checkboxes in an array for the Pizza object.
+// ** I am not entirely confident that this is actually pushing values of the selected checkboxes into the array 'toppings'. The array 'toppings' seems to be undefined and I cannot seem to access anything in it by index. But something seems to be happening because console.log shows values of the selected checkboxes in an array for the Pizza object.
 
 Pizza.prototype.price = function(size,topping) {
 // *** IMO this is the stupidest possible way to include prices - a better approach (in the absence of a database) would be store sizes,prices and toppings,prices in 2D (right term?) arrays, but I couldn't figure out how to access the contents of such arrays
@@ -57,7 +57,8 @@ Pizza.prototype.price = function(size,topping) {
 
 //** UI LOGIC
 
-var myPizza = new Pizza();
+var myPizza = new Pizza(); // ** Declare myPizza as Global Variable
+
 $(document).ready(function(){
   $("#place-order").submit (function(event) {
     event.preventDefault();
@@ -83,7 +84,5 @@ $(document).ready(function(){
     $('button#order').prop('disabled', true);
     myPizza.size = "";
     myPizza.toppings = [];
-
-
   });
 });

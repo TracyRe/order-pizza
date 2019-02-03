@@ -17,7 +17,8 @@ var topping = document.querySelectorAll("[name=topping]");
   var i;
   for (i = 0; i < topping.length; i++) {
     if (topping[i].checked) {
-      this.toppings.push(topping[i].value);
+      this.toppings.push(" " + topping[i].value);
+      // ** First I tried to loop through the elements in toppings array and add a space between them and output them, instead of using .toString. But I couldn't write the function without the entire function being displayed on the page. So I hacked the values on index.html by adding leading spaces, a despicable hack. Finally I realized I could just add the leading space when I pushed to the array, here.
     }
   }
 };
@@ -36,7 +37,8 @@ Pizza.prototype.price = function(size,topping) {
     }
 
     this.toppings.forEach(function(topping) {
-      if (topping === " Pepperoni") { // ** I can't believe this worked. I thought it would need to be a lot more complicated; I tried both a for loop and a forEach loop to access the contents of the toppings array with no success
+      if (topping === " Pepperoni") {
+        // ** I can't believe this worked. I thought it would need to be a lot more complicated; I tried both a for loop and a forEach loop to access the contents of the toppings array with no success
         toppingCost += 3;
       } else {
         toppingCost += 2;
@@ -44,16 +46,6 @@ Pizza.prototype.price = function(size,topping) {
     });
     return sizeCost + toppingCost;
   };
-
-// ** This is an abortive attempt to write a function to loop through the toppings array and insert spaces between each element. Even so, the function would need to identify the final element and not add a comma. But I am incapable of writing a function and outputting the result on the page - instead the entire function is written onto the page and I cannot find any explanation on the Internet. I resorted to insertng a space in front of the topping values, which is a despicable hack, and outputting the array as a string.
-
-// Pizza.prototype.toppingSelections = function(topping) {
-//   this.toppings.forEach(function(topping) {
-//     document.write(topping + ", ");
-//   });
-//   return
-// };
-
 
 //** UI LOGIC
 
@@ -69,7 +61,6 @@ $(document).ready(function(){
     myPizza.addTopping(topping);
     var price = myPizza.price(size, topping);
 
-    // ** I think this is a stupid way to output the list of toppings because I had to hack the values by adding a leading space so they wouldn't run together.
    if (myPizza.toppings === undefined || myPizza.toppings.length == 0) {
      var toppingList = ", no toppings";
    } else {

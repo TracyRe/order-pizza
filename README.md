@@ -46,6 +46,7 @@ System will display base price of pizza when size is selected | Small | $8
 
 ## Setup/Installation Requirements
 
+* View at https://tracyre.github.io/order-pizza/
 * Clone from https://github.com/TracyRe/
 * Open in browser of your choice
 * Edit files as desired

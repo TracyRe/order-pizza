@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="./css/styles.css" type="text/css" media="all">
     <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="./js/scripts.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Order Pizza</title>
@@ -19,9 +20,9 @@
             <div class="selection-wrap">
               <div class="selection">
                 <h3>Pick a Size</h3>
-                <p><input id="size-large" type="radio" name="size" value="Large"> <label for="size-large"><strong>Large</strong> .... $16</label></p>
-                <p><input id="size-medium"  type="radio" name="size" value="Medium"> <label for="size-medium"><strong>Medium</strong> .... $12</label></p>
-                <p><input id="size-small"  type="radio" name="size" value="Small"> <label for="size-small"><strong>Small</strong> .... $8</label></p>
+                <p><input id="size-large" type="radio" name="size" onclick="handleClick(this);" value="Large"> <label for="size-large"><strong>Large</strong> .... $16</label></p>
+                <p><input id="size-medium"  type="radio" name="size" onclick="handleClick(this);" value="Medium"> <label for="size-medium"><strong>Medium</strong> .... $12</label></p>
+                <p><input id="size-small"  type="radio" name="size" onclick="handleClick(this);" value="Small"> <label for="size-small"><strong>Small</strong> .... $8</label></p>
               </div>
 
               <div class="selection">
@@ -33,7 +34,7 @@
             </div>
 
             <div class="button-row">
-              <button class="btn btn-primary" type="submit" name="button">Place Order</button>
+              <button id="order" class="btn btn-primary" type="submit" name="button" disabled>Place Order</button>
             </div>
             <h3 class="order"></h3>
             <p class="thankyou">Thank you for your order.</p>
@@ -42,4 +43,11 @@
         </div>
     </div>
   </body>
+
+  <script type="text/javascript">
+    function handleClick() {
+      document.getElementById("order").disabled = false;
+    }
+  </script>
+
 </html>

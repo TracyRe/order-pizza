@@ -18,10 +18,10 @@ var topping = document.querySelectorAll("[name=topping]");
     }
   }
 };
-// ** I am not confident that this is actually pushing values of the selected checkboxes into the array 'toppings'. The array 'toppings' seems to be undefined and I cannot access anything in it by index. But something seems to be happening because console log shows values of the selected checkboxes in an array for the Pizza object.
+// ** I am not confident that this is actually pushing values of the selected checkboxes into the array 'toppings'. The array 'toppings' seems to be undefined and I cannot seem to access anything in it by index. But something seems to be happening because console log shows values of the selected checkboxes in an array for the Pizza object.
 
 Pizza.prototype.price = function(size,topping) {
-// *** IMO this is the stupidest possible way to include prices - a better approach (in the absence of a database) would be store sizes,prices and toppings,prices in an 2D (right term?) arrays, but I couldn't figure out how to access the contents of such an array
+// *** IMO this is the stupidest possible way to include prices - a better approach (in the absence of a database) would be store sizes,prices and toppings,prices in 2D (right term?) arrays, but I couldn't figure out how to access the contents of such arrays
   var sizeCost = 0;
   var toppingCost = 0;
     if (size === "Large") {
@@ -39,8 +39,14 @@ Pizza.prototype.price = function(size,topping) {
         toppingCost += 2;
       }
     });
+    return sizeCost + toppingCost;
+  };
 
-  return sizeCost + toppingCost;
+Pizza.prototype.toppingSelections = function(topping) {
+  this.toppings.forEach(function(topping) {
+    document.write(topping + ", ");
+  });
+  return
 };
 
 
@@ -58,19 +64,24 @@ $(document).ready(function(){
     myPizza.addSize(size);
     myPizza.addTopping(topping);
     var price = myPizza.price(size, topping);
+    // var toppingList = myPizza.toppingSelections(topping);
+    var toppingList = myPizza.toppings.toString();
 
     console.log(size);
     console.log(topping);
     console.log(myPizza);
     console.log(price);
+    console.log(toppingList);
 
-    var toppingList = myPizza.toppings.toString();
+
+
 
     $(".order").text(size + " pizza " + "with " + toppingList + ": $" + price);
     $(".thankyou").show();
     $(".order").show();
     $("input[name='size']").prop("checked",false);
     $("input[name='topping']").prop("checked",false);
+    $('button#order').prop('disabled', true);
 
 
   });

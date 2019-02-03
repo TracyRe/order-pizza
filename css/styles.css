@@ -1,56 +1,43 @@
 /* ******** NON-MOBILE STYLES (*********) */
 @media only screen and (min-width: 600px) {
 
-
-
   .container-fluid {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     min-height: 100%;
   }
 
   div.content-wrapper {
-    /* background-color: #fef; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center; */
-    width: 80%;
+    width: 94%;
     height: auto;
     padding: 20px;
     margin: 20px auto 10px auto;
     border-radius: 8px;
-    box-shadow: 4px 4px 10px rgba(100, 100, 100, 0.5);
+    box-shadow: 2px 2px 6px rgba(100, 100, 100, 0.5), 4px 4px 10px rgba(100, 100, 100, 0.5);
   }
 
   .container-fluid h1 {
     font-size: 48px;
-  }
-
-  .selection-wrap {
-    /* display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: space-around;
-    align-items: top; */
-    width: 80%;
-    margin: 0 auto 0 15%;
-    /* border: 1px solid #0f0; */
-    height: auto;
+    text-shadow: 2px 2px 4px #770101;
   }
 
   .selection {
-    /* flex: 1 1 auto; */
-    min-width: 40%;
-    margin: 0 20px 20px 20px;
-    float: left;
+    flex: 0 1 30%;
+    /* width: 50%; */
+    /* margin: 0 auto 0 auto; */
+  }
+
+  .decor-img {
+    flex: 0 1 20%;
+  }
+
+  .selection, .decor-img {
     /* border: 1px solid #f0f; */
   }
 
-  .button-row {
-    display: block;
+  .selection-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
   }
 
   label {
@@ -71,9 +58,6 @@ body {
   height: 100%;
 }
 
-/* body {
-  background-color: #efece6;
-} */
 
 label {
   font-weight: normal;
@@ -89,16 +73,11 @@ h1 {
   font-size: 36px;
   padding: 0px 20px 10px 20px;
   color: #fff;
-  text-shadow: 0 0 8px #BD2222;
-
+  text-shadow: 2px 2px 4px #770101;
 }
 
 
 .container-fluid {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   min-height: 100%;
   padding: 0;
 }
@@ -106,12 +85,8 @@ h1 {
 
 .content-wrapper {
   background-color: #fff;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  width: 92%;
-  height: 100%;
+  width: 94%;
+  min-height: 100%;
   padding: 20px;
   margin: 20px auto 4px auto;
   text-align: center;
@@ -124,14 +99,7 @@ h1 {
   margin-top: 0px;
 }
 
-.selection-wrap {
-  /* display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  justify-content: space-around;
-  align-items: top; */
-  width: 100%;
-  /* border: 1px solid #0f0; */
+.selection {
   text-align: left;
 }
 
@@ -139,7 +107,6 @@ h1 {
   display: none;
   text-align: center;
 }
-
 
 .thankyou {
   font-family: cursive;
@@ -149,21 +116,12 @@ h1 {
 
 /*  ********* BUTTONS ********** */
 
- .button-row {
-   /* display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center; */
-   margin-top: 20px;
- }
-
  .btn-primary {
    padding: 8px 20px 8px 20px;
    text-transform: uppercase;
    letter-spacing: .1em;
    min-width: 150px;
    box-shadow: 1px 1px 2px rgba(100, 100, 100, 1.0);
-
  }
 
  /* ********** INPUT BORDER ON MOBILE ******** */
@@ -174,4 +132,12 @@ input, select {
 
 span.name {
   font-weight: bold;
+}
+
+
+/* If the screen size is 992px wide or less, hide the element */
+@media only screen and (max-width: 992px) {
+  div.decor-img {
+    display: none;
+  }
 }

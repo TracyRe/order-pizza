@@ -1,6 +1,6 @@
 # Order Pizza
 
-### Pizza ordering website project for Epicodus - 2019-0201
+### Pizza ordering website project for Epicodus - 2019-0202
 
 #### By Tracy Reith
 
@@ -37,12 +37,11 @@ System will add price of each topping to base price | Small pizza + Pepperoni | 
 Customer can order final pizza | "Order pizza" | "Small pizza with pepperoni, olives, $13"
 System will display final price of pizza when order is completed | Order completed: Small pizza + Pepperoni + Olives  | $13
 System will display base price of pizza when size is selected | Small | $8
-System will display price of pizza as toppings are added | Small pizza + Pepperoni | $8 + $3 = $11
-. | Small pizza + Pepperoni + Olives | $11 + $2 = $13
 
 ### Stretch Goals
 
 * Style page with CSS
+* Display running total as toppings are added to or removed from pizza order
 * Order multiple pizzas with different toppings
 
 ## Setup/Installation Requirements

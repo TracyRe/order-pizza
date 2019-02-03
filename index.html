@@ -18,23 +18,30 @@
 
           <form id="place-order" action="index.html" method="post">
             <div class="selection-wrap">
+              <div class="decor-img">
+                <img src="./img/mario.png" alt="Mario" title="Mario">
+              </div>
               <div class="selection">
                 <h3>Pick a Size</h3>
                 <p><input id="size-large" type="radio" name="size" onclick="handleClick(this);" value="Large"> <label for="size-large"><strong>Large</strong> .... $16</label></p>
                 <p><input id="size-medium"  type="radio" name="size" onclick="handleClick(this);" value="Medium"> <label for="size-medium"><strong>Medium</strong> .... $12</label></p>
                 <p><input id="size-small"  type="radio" name="size" onclick="handleClick(this);" value="Small"> <label for="size-small"><strong>Small</strong> .... $8</label></p>
               </div>
-
               <div class="selection">
                 <h3>Pick Your Toppings</h3>
-                <p><input id="topping-pepperoni" type="checkbox" name="topping" value="Pepperoni"> <label for="topping-pepperoni"><strong>Pepperoni</strong> .... $3</label></p>
-                <p><input id="topping-mushrooms" type="checkbox" name="topping" value="Mushrooms"> <label for="topping-mushrooms"><strong>Mushrooms</strong> .... $2</label></p>
-                <p><input id="topping-olives" type="checkbox" name="topping" value="Olives"> <label for="topping-olives"><strong>Olives</strong> .... $2</label></p>
+                <p><input id="topping-pepperoni" type="checkbox" name="topping" value=" Pepperoni"> <label for="topping-pepperoni"><strong>Pepperoni</strong> .... $3</label></p>
+                <p><input id="topping-mushrooms" type="checkbox" name="topping" value=" Mushrooms"> <label for="topping-mushrooms"><strong>Mushrooms</strong> .... $2</label></p>
+                <p><input id="topping-olives" type="checkbox" name="topping" value=" Olives"> <label for="topping-olives"><strong>Olives</strong> .... $2</label></p>
+              </div>
+              <div class="col-lg-3 decor-img">
+                <img src="./img/luigi.png" alt="Luigi" title="Luigi">
               </div>
             </div>
 
-            <div class="button-row">
-              <button id="order" class="btn btn-primary" type="submit" name="button" disabled>Place Order</button>
+            <div class="row">
+              <div class="col">
+                <button id="order" class="btn btn-primary" type="submit" name="button" disabled>Place Order</button>
+              </div>
             </div>
             <h3 class="order"></h3>
             <p class="thankyou">Thank you for your order.</p>

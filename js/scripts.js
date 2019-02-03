@@ -1,13 +1,16 @@
 //** BUSINESS LOGIC
 
 function Pizza() {
-  this.sizes = [];
+  this.size = "";
   this.toppings = [];
 }
 
 Pizza.prototype.addSize = function(size) {
-  this.sizes.push(size);
+  this.size += size;
 };
+// Pizza.prototype.addSize = function(size) {
+//   this.sizes.push(size);
+// };
 
 Pizza.prototype.addTopping = function(topping) {
 var topping = document.querySelectorAll("[name=topping]");
@@ -42,7 +45,7 @@ Pizza.prototype.price = function(size,topping) {
     return sizeCost + toppingCost;
   };
 
-// ** This is an abortive attempt to write a function to loop through the toppings array and insert spaces between each element. But I am incapable of writing a function and outputting the result on the page - instead the entire function is written onto the page and I cannot find any explanation on the Internet. I resorted to insertng a space in front of the topping values, which is a despicable hack, and outputting the array as a string.
+// ** This is an abortive attempt to write a function to loop through the toppings array and insert spaces between each element. Even so, the function would need to identify the final element and not add a comma. But I am incapable of writing a function and outputting the result on the page - instead the entire function is written onto the page and I cannot find any explanation on the Internet. I resorted to insertng a space in front of the topping values, which is a despicable hack, and outputting the array as a string.
 
 // Pizza.prototype.toppingSelections = function(topping) {
 //   this.toppings.forEach(function(topping) {
@@ -78,7 +81,7 @@ $(document).ready(function(){
     $("input[name='size']").prop("checked",false);
     $("input[name='topping']").prop("checked",false);
     $('button#order').prop('disabled', true);
-    myPizza.sizes = [];
+    myPizza.size = "";
     myPizza.toppings = [];
 
 
